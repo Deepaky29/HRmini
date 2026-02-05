@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://hrmini-h4aa.onrender.com/",
+  baseURL: "https://hrmini-h4aa.onrender.com",
 });
 
 API.interceptors.request.use((req) => {

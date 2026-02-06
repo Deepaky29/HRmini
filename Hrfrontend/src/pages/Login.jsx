@@ -32,13 +32,19 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-indigo-100 to-purple-100">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-6 rounded shadow-md w-full max-w-sm"
+        className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md space-y-6"
       >
-        <h2 className="text-2xl font-bold mb-4">Login</h2>
-        {error && <p className="text-red-500 mb-2">{error}</p>}
+        <h2 className="text-3xl font-extrabold text-gray-800 text-center">
+          Welcome Back
+        </h2>
+        <p className="text-center text-gray-500">
+          Sign in to your account
+        </p>
+
+        {error && <p className="text-red-500 text-center">{error}</p>}
 
         <input
           type="email"
@@ -46,7 +52,7 @@ const Login = () => {
           placeholder="Email"
           value={form.email}
           onChange={handleChange}
-          className="border p-2 mb-3 w-full rounded"
+          className="border border-gray-300 p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-indigo-400"
           required
         />
 
@@ -56,16 +62,30 @@ const Login = () => {
           placeholder="Password"
           value={form.password}
           onChange={handleChange}
-          className="border p-2 mb-3 w-full rounded"
+          className="border border-gray-300 p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-indigo-400"
           required
         />
 
-        <button
-          type="submit"
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 w-full"
-        >
-          Login
-        </button>
+        <div className="flex gap-4">
+          <button
+            type="submit"
+            className="flex-1 bg-indigo-500 text-white py-3 rounded-lg font-semibold hover:bg-indigo-600 transition"
+          >
+            Login
+          </button>
+
+          <button
+            type="button"
+            onClick={() => navigate("/signup")}
+            className="flex-1 bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition"
+          >
+            Signup
+          </button>
+        </div>
+
+        <p className="text-center text-gray-400 text-sm mt-4">
+          © 2026 YourCompany. All rights reserved.
+        </p>
       </form>
     </div>
   );
